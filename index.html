@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -13,7 +14,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="manifest" href='data:application/manifest+json,{"name":"AresFit Dialer","short_name":"AresFit","start_url":".","display":"standalone","background_color":"%2308080d","theme_color":"%2308080d","icons":[{"src":"data:image/svg%2Bxml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 192 192%22><rect width=%22192%22 height=%22192%22 rx=%2232%22 fill=%22%2308080d%22/><text x=%2296%22 y=%22130%22 font-size=%22110%22 text-anchor=%22middle%22>🏋️</text></svg>","sizes":"192x192","type":"image/svg+xml"}]}'>
 <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🏋️</text></svg>'>
-<title>AresFit Dialer v46</title>
+<title>AresFit Dialer v47</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;touch-action:manipulation}
@@ -208,30 +209,35 @@ th{background:var(--card);font-weight:600}
 <body>
 
 <!-- INSTALL HELP MODAL -->
+
 <div class="modal" id="help-modal" style="display:none">
   <div class="modal-box" style="max-width:520px">
     <button class="cog" style="font-size:22px" onclick="document.getElementById('help-modal').style.display='none'">✕</button>
     <div class="logo" style="margin-bottom:10px">🏋️ <span>SETUP GUIDE</span></div>
     <p class="sub" style="margin-bottom:14px">Get the most out of the dialer with 2 optional installs.</p>
-    
-    <h2 style="margin-top:12px">1️⃣ CircleLoop Chrome Extension</h2>
-    <p class="sub" style="font-size:12px;margin-bottom:8px">Makes the CALL button fire straight into CircleLoop Desktop. No Windows defaults to mess with.</p>
-    <a href="https://chromewebstore.google.com/search/circleloop" target="_blank" class="btn-red" style="display:block;padding:10px;text-align:center;text-decoration:none;font-size:12px;margin-bottom:12px">🔗 Open Chrome Web Store → search "CircleLoop"</a>
 
-    <h2>2️⃣ Install as App (PWA)</h2>
-    <p class="sub" style="font-size:12px;margin-bottom:6px"><strong style="color:var(--green)">On PC (Chrome/Edge):</strong> click the install icon ⊕ in the address bar, or menu → Install AresFit Dialer</p>
-    <p class="sub" style="font-size:12px;margin-bottom:6px"><strong style="color:var(--green)">On Android:</strong> menu → Add to Home Screen</p>
-    <p class="sub" style="font-size:12px;margin-bottom:12px"><strong style="color:var(--green)">On iPhone (Safari):</strong> Share button → Add to Home Screen</p>
-    <p class="sub" style="font-size:11px;margin-bottom:12px;color:var(--amber)">⚠ On iPhone you MUST use Safari for Add to Home Screen. Chrome iOS doesn't support PWA install.</p>
+```
+<h2 style="margin-top:12px">1️⃣ CircleLoop Chrome Extension</h2>
+<p class="sub" style="font-size:12px;margin-bottom:8px">Makes the CALL button fire straight into CircleLoop Desktop. No Windows defaults to mess with.</p>
+<a href="https://chromewebstore.google.com/search/circleloop" target="_blank" class="btn-red" style="display:block;padding:10px;text-align:center;text-decoration:none;font-size:12px;margin-bottom:12px">🔗 Open Chrome Web Store → search "CircleLoop"</a>
 
-    <h2>3️⃣ Auto-backup to cloud (optional)</h2>
-    <p class="sub" style="font-size:12px;margin-bottom:12px">Install Google Drive desktop → set Downloads folder to sync. Every 25 calls auto-backs up to Drive.</p>
+<h2>2️⃣ Install as App (PWA)</h2>
+<p class="sub" style="font-size:12px;margin-bottom:6px"><strong style="color:var(--green)">On PC (Chrome/Edge):</strong> click the install icon ⊕ in the address bar, or menu → Install AresFit Dialer</p>
+<p class="sub" style="font-size:12px;margin-bottom:6px"><strong style="color:var(--green)">On Android:</strong> menu → Add to Home Screen</p>
+<p class="sub" style="font-size:12px;margin-bottom:12px"><strong style="color:var(--green)">On iPhone (Safari):</strong> Share button → Add to Home Screen</p>
+<p class="sub" style="font-size:11px;margin-bottom:12px;color:var(--amber)">⚠ On iPhone you MUST use Safari for Add to Home Screen. Chrome iOS doesn't support PWA install.</p>
 
-    <button class="btn-ghost" style="width:100%;padding:10px" onclick="localStorage.setItem('aresfit_help_seen','1');document.getElementById('help-modal').style.display='none'">Got it, don't show again</button>
+<h2>3️⃣ Auto-backup to cloud (optional)</h2>
+<p class="sub" style="font-size:12px;margin-bottom:12px">Install Google Drive desktop → set Downloads folder to sync. Every 25 calls auto-backs up to Drive.</p>
+
+<button class="btn-ghost" style="width:100%;padding:10px" onclick="localStorage.setItem('aresfit_help_seen','1');document.getElementById('help-modal').style.display='none'">Got it, don't show again</button>
+```
+
   </div>
 </div>
 
 <!-- SETUP MODAL -->
+
 <div class="modal" id="setup-modal" style="display:none">
   <div class="modal-box" style="max-width:440px">
     <button class="cog" style="font-size:22px" onclick="closeSetup()">✕</button>
@@ -247,10 +253,11 @@ th{background:var(--card);font-weight:600}
 </div>
 
 <!-- UPLOAD SCREEN -->
+
 <div id="upload-screen" class="upload-screen" style="display:none">
   <div class="upload-card panel" style="padding:20px">
     <button class="cog" onclick="openSetup()">⚙</button>
-    <div class="logo" style="font-size:18px;margin-bottom:4px">🏋️ <span>ARESFIT DIALER</span> <span style="font-size:10px;color:var(--txt3);font-weight:500">v46</span></div>
+    <div class="logo" style="font-size:18px;margin-bottom:4px">🏋️ <span>ARESFIT DIALER</span> <span style="font-size:10px;color:var(--txt3);font-weight:500">v47</span></div>
     <p class="sub" style="margin-bottom:18px">Cold calling companion <span id="welcome-name" style="color:var(--red2)"></span></p>
     <div class="upload-zone" id="upload-zone" onclick="document.getElementById('csv-in').click()">
       <div style="font-size:42px">📂</div>
@@ -265,6 +272,7 @@ th{background:var(--card);font-weight:600}
 </div>
 
 <!-- MAIN APP -->
+
 <div id="main-app" class="app" style="display:none">
   <!-- DASHBOARD (mobile only - hidden on desktop) -->
   <div class="panel mob-section" id="dashboard-panel" style="display:none">
@@ -272,6 +280,7 @@ th{background:var(--card);font-weight:600}
   </div>
 
   <!-- MORE (mobile only - hidden on desktop) -->
+
   <div class="panel mob-section" id="more-panel" style="display:none">
     <div class="panel-body" id="more-body"></div>
   </div>
@@ -347,6 +356,7 @@ th{background:var(--card);font-weight:600}
 </div>
 
 <!-- BOTTOM NAV (mobile) -->
+
 <nav class="bottom-nav" id="bnav">
   <button data-sec="dashboard" onclick="showSec('dashboard',this)"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10"/></svg>Home</button>
   <button data-sec="leads" onclick="showSec('leads',this)"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Leads</button>
@@ -356,6 +366,7 @@ th{background:var(--card);font-weight:600}
 </nav>
 
 <!-- MAPPING MODAL -->
+
 <div class="modal" id="map-modal" style="display:none">
   <div class="modal-box">
     <div class="logo" style="margin-bottom:8px">🏋️ <span>MAP COLUMNS</span></div>
@@ -667,125 +678,130 @@ function renderCard(){
     </div>
     <div style="margin-top:10px"><div class="field-lbl" style="margin-bottom:3px">Call Notes ${l.callOutcome?'<span style="color:var(--red2)">· REQUIRED</span>':''}</div>
     <textarea id="notes-in" class="${blockNext?'required-empty':''}" placeholder="${l.callOutcome?(NOTE_PROMPTS[l.callOutcome]||'Notes...'):'Pick an outcome above first'}" oninput="updateNotes()">${esc(l.callNotes)}</textarea>
-    <div class="notes-warning ${blockNext?'show':''}">⚠ Fill in notes before moving to next lead</div></div>
-    <div style="margin-top:6px"><div class="field-lbl" style="margin-bottom:3px">Callback date/time</div>
-    <input type="datetime-local" id="cb-in" value="${l.cbDate}" onchange="updateCb()"></div>
-    <div class="progress"><button class="btn-ghost" onclick="nav(-1)">← Prev</button><span class="sub" style="font-family:var(--mono);align-self:center">${filtered.length?idx+1:0} / ${filtered.length}</span><button class="btn-ghost" onclick="nav(1)" ${blockNext?'disabled':''}>Next →</button></div>`;
+
+```
+<div class="notes-warning ${blockNext?'show':''}">⚠ Fill in notes before moving to next lead</div></div>
+<div style="margin-top:6px"><div class="field-lbl" style="margin-bottom:3px">Callback date/time</div>
+<input type="datetime-local" id="cb-in" value="${l.cbDate}" onchange="updateCb()"></div>
+<div class="progress"><button class="btn-ghost" onclick="nav(-1)">← Prev</button><span class="sub" style="font-family:var(--mono);align-self:center">${filtered.length?idx+1:0} / ${filtered.length}</span><button class="btn-ghost" onclick="nav(1)" ${blockNext?'disabled':''}>Next →</button></div>`;
+```
+
 }
 function editField(f,ev){
-  if(ev){ev.stopPropagation();ev.preventDefault()}
-  const l=filtered[idx];if(!l)return;
-  const el=document.getElementById('fv-'+f);
-  if(!el||el.querySelector('input,select'))return;
-  const cur=l[f]||'';
-  let editor;
-  if(f==='status'){
-    el.innerHTML=`<select onchange="commitEdit('${f}',this.value,event)" onblur="commitEdit('${f}',this.value,event)" onclick="event.stopPropagation()">${STATUS_OPTS.map(s=>`<option value="${s}"${s===cur?' selected':''}>${s||'—'}</option>`).join('')}</select>`;
-    editor=el.querySelector('select');
-  }else{
-    const inputType=f==='email'?'email':f==='phone'?'tel':'text';
-    el.innerHTML=`<input type="${inputType}" value="${esc(cur)}" onblur="commitEdit('${f}',this.value,event)" onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter'){event.preventDefault();this.blur()}else if(event.key==='Escape'){this.value='${esc(cur).replace(/'/g,"\\'")}';this.blur()}">`;
-    editor=el.querySelector('input');
-  }
-  if(editor){
-    setTimeout(()=>{editor.focus();if(editor.select)editor.select()},10);
-  }
+if(ev){ev.stopPropagation();ev.preventDefault()}
+const l=filtered[idx];if(!l)return;
+const el=document.getElementById(‘fv-’+f);
+if(!el||el.querySelector(‘input,select’))return;
+const cur=l[f]||’’;
+let editor;
+if(f===‘status’){
+el.innerHTML=`<select onchange="commitEdit('${f}',this.value,event)" onblur="commitEdit('${f}',this.value,event)" onclick="event.stopPropagation()">${STATUS_OPTS.map(s=>`<option value=”${s}”${s===cur?’ selected’:’’}>${s||’—’}</option>`).join('')}</select>`;
+editor=el.querySelector(‘select’);
+}else{
+const inputType=f===‘email’?‘email’:f===‘phone’?‘tel’:‘text’;
+el.innerHTML=`<input type="${inputType}" value="${esc(cur)}" onblur="commitEdit('${f}',this.value,event)" onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter'){event.preventDefault();this.blur()}else if(event.key==='Escape'){this.value='${esc(cur).replace(/'/g,"\\'")}';this.blur()}">`;
+editor=el.querySelector(‘input’);
+}
+if(editor){
+setTimeout(()=>{editor.focus();if(editor.select)editor.select()},10);
+}
 }
 function commitEdit(f,v,ev){
-  if(ev)ev.stopPropagation();
-  const l=filtered[idx];if(!l)return;
-  const newVal=v.trim();
-  if(l[f]===newVal){
-    // No change, just restore display without full re-render
-    const el=document.getElementById('fv-'+f);
-    if(el){el.innerHTML=newVal?esc(newVal):(f==='dm'?'+ add name':f==='email'?'+ add email':f==='phone'?'+ add':'—');el.className='field-val'+(newVal?'':' empty')}
-    return;
-  }
-  l[f]=newVal;
-  if(!l.edited)l.edited={};
-  l.edited[f]=true;
-  save();
-  // Only update the one field that changed, not the whole card
-  const el=document.getElementById('fv-'+f);
-  if(el){el.innerHTML=newVal?esc(newVal):(f==='dm'?'+ add name':f==='email'?'+ add email':f==='phone'?'+ add':'—');el.className='field-val'+(newVal?'':' empty')}
-  // Refresh email tab and lead list to reflect new value (these don't affect the input)
-  renderEmail();renderList();
+if(ev)ev.stopPropagation();
+const l=filtered[idx];if(!l)return;
+const newVal=v.trim();
+if(l[f]===newVal){
+// No change, just restore display without full re-render
+const el=document.getElementById(‘fv-’+f);
+if(el){el.innerHTML=newVal?esc(newVal):(f===‘dm’?’+ add name’:f===‘email’?’+ add email’:f===‘phone’?’+ add’:’—’);el.className=‘field-val’+(newVal?’’:’ empty’)}
+return;
+}
+l[f]=newVal;
+if(!l.edited)l.edited={};
+l.edited[f]=true;
+save();
+// Only update the one field that changed, not the whole card
+const el=document.getElementById(‘fv-’+f);
+if(el){el.innerHTML=newVal?esc(newVal):(f===‘dm’?’+ add name’:f===‘email’?’+ add email’:f===‘phone’?’+ add’:’—’);el.className=‘field-val’+(newVal?’’:’ empty’)}
+// Refresh email tab and lead list to reflect new value (these don’t affect the input)
+renderEmail();renderList();
 }
 function nav(d){
-  const l=filtered[idx];
-  // Block Next if outcome picked but no notes
-  if(d>0&&l&&l.callOutcome&&!l.callNotes.trim()){const t=document.getElementById('notes-in');if(t){t.classList.add('required-empty');t.focus()}return}
-  // Commit as a real call ONLY if all 3 conditions met: callTapped + outcome + notes
-  if(d>0&&l&&l.callTapped&&l.callOutcome&&l.callNotes.trim()&&!l.dialled){
-    l.dialled=true;
-    l.callStartTs=l.callTapped;
-    l.callStart=new Date(l.callTapped).toISOString();
-    l.callCount=(l.callCount||0)+1;
-    save();
-  }
-  // Smart next: jump to scheduled callback if due
-  if(d>0){const due=getDueCallbacks();if(due.length&&due[0].id!==(l&&l.id)){if(confirm(`⏰ Scheduled call due: ${due[0].business} at ${formatCbTime(due[0].cbDate)}\n\nJump to it now?`)){goLead(due[0].id);return}}}
-  idx=Math.max(0,Math.min(filtered.length-1,idx+d));
-  renderCard();renderList();renderEmail();renderScript();renderSite();
+const l=filtered[idx];
+// Block Next if outcome picked but no notes
+if(d>0&&l&&l.callOutcome&&!l.callNotes.trim()){const t=document.getElementById(‘notes-in’);if(t){t.classList.add(‘required-empty’);t.focus()}return}
+// Commit as a real call ONLY if all 3 conditions met: callTapped + outcome + notes
+if(d>0&&l&&l.callTapped&&l.callOutcome&&l.callNotes.trim()&&!l.dialled){
+l.dialled=true;
+l.callStartTs=l.callTapped;
+l.callStart=new Date(l.callTapped).toISOString();
+l.callCount=(l.callCount||0)+1;
+save();
+}
+// Smart next: jump to scheduled callback if due
+if(d>0){const due=getDueCallbacks();if(due.length&&due[0].id!==(l&&l.id)){if(confirm(`⏰ Scheduled call due: ${due[0].business} at ${formatCbTime(due[0].cbDate)}\n\nJump to it now?`)){goLead(due[0].id);return}}}
+idx=Math.max(0,Math.min(filtered.length-1,idx+d));
+renderCard();renderList();renderEmail();renderScript();renderSite();
 }
 function tapCall(){
-  const l=filtered[idx];if(!l)return;
-  const now=Date.now();
-  if(l._lastTap&&now-l._lastTap<1500)return;
-  l._lastTap=now;
-  l.callTapped=now;
-  const num=(l.phone||'').replace(/[^\d+]/g,'');
-  // Copy number to clipboard
-  if(l.phone)navigator.clipboard.writeText(l.phone).then(()=>{flashDot(true)}).catch(()=>{});
-  save();renderCard();
-  // Try CircleLoop deep link first (cheap shot - probably won't work but free to try)
-  try{
-    const iframe=document.createElement('iframe');
-    iframe.style.display='none';
-    iframe.src='circleloop://call/'+num;
-    document.body.appendChild(iframe);
-    setTimeout(()=>iframe.remove(),100);
-  }catch(e){}
-  // After short delay, try opening CircleLoop via App Store URL (works if installed on iOS)
-  setTimeout(()=>{window.location.href='https://apps.apple.com/gb/app/circleloop/id1120683212'},250);
+const l=filtered[idx];if(!l)return;
+const now=Date.now();
+if(l._lastTap&&now-l._lastTap<1500)return;
+l._lastTap=now;
+l.callTapped=now;
+const num=(l.phone||’’).replace(/[^\d+]/g,’’);
+// Copy number to clipboard
+if(l.phone)navigator.clipboard.writeText(l.phone).then(()=>{flashDot(true)}).catch(()=>{});
+save();renderCard();
+// Try CircleLoop deep link first (cheap shot - probably won’t work but free to try)
+try{
+const iframe=document.createElement(‘iframe’);
+iframe.style.display=‘none’;
+iframe.src=‘circleloop://call/’+num;
+document.body.appendChild(iframe);
+setTimeout(()=>iframe.remove(),100);
+}catch(e){}
+// After short delay, try opening CircleLoop via App Store URL (works if installed on iOS)
+setTimeout(()=>{window.location.href=‘circleloop://call/’+num},250);
 }
-function copyPhone(){const l=filtered[idx];if(!l||!l.phone)return;navigator.clipboard.writeText(l.phone).then(()=>{flashDot(true);const btn=event.target;const orig=btn.textContent;btn.textContent='✓';setTimeout(()=>btn.textContent=orig,800)})}
+function copyPhone(){const l=filtered[idx];if(!l||!l.phone)return;navigator.clipboard.writeText(l.phone).then(()=>{flashDot(true);const btn=event.target;const orig=btn.textContent;btn.textContent=‘✓’;setTimeout(()=>btn.textContent=orig,800)})}
 // Legacy markDialled kept for compatibility but does nothing - prevents accidental flagging
 function markDialled(){}
 function ts(){const d=new Date();return `[${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}]`}
 function setOutcome(o){const l=filtered[idx];if(!l)return;l.callOutcome=o;const now=new Date();l.outcomeAt=now.toISOString();outcomesSinceBackup++;if(outcomesSinceBackup>=BACKUP_INTERVAL){autoBackup();outcomesSinceBackup=0}save();render()}
-function updateNotes(){const l=filtered[idx];if(l){l.callNotes=document.getElementById('notes-in').value;save();const t=document.getElementById('notes-in');if(t&&l.callNotes.trim()){t.classList.remove('required-empty');document.querySelector('.notes-warning')?.classList.remove('show');document.querySelector('.progress button:last-child')?.removeAttribute('disabled')}}}
-function updateCb(){const l=filtered[idx];if(l){l.cbDate=document.getElementById('cb-in').value;save()}}
-function renderStats(){const d=leads.filter(l=>l.dialled).length;const c=leads.filter(l=>['Contacted','Interested','Callback','Quoted'].includes(l.callOutcome)).length;document.getElementById('s-calls').textContent=d;document.getElementById('s-rate').textContent=d?Math.round(c/d*100)+'%':'0%';document.getElementById('s-cb').textContent=leads.filter(l=>l.callOutcome==='Callback').length;document.getElementById('s-hot').textContent=leads.filter(l=>l.callOutcome==='Interested').length}
+function updateNotes(){const l=filtered[idx];if(l){l.callNotes=document.getElementById(‘notes-in’).value;save();const t=document.getElementById(‘notes-in’);if(t&&l.callNotes.trim()){t.classList.remove(‘required-empty’);document.querySelector(’.notes-warning’)?.classList.remove(‘show’);document.querySelector(’.progress button:last-child’)?.removeAttribute(‘disabled’)}}}
+function updateCb(){const l=filtered[idx];if(l){l.cbDate=document.getElementById(‘cb-in’).value;save()}}
+function renderStats(){const d=leads.filter(l=>l.dialled).length;const c=leads.filter(l=>[‘Contacted’,‘Interested’,‘Callback’,‘Quoted’].includes(l.callOutcome)).length;document.getElementById(‘s-calls’).textContent=d;document.getElementById(‘s-rate’).textContent=d?Math.round(c/d*100)+’%’:‘0%’;document.getElementById(‘s-cb’).textContent=leads.filter(l=>l.callOutcome===‘Callback’).length;document.getElementById(‘s-hot’).textContent=leads.filter(l=>l.callOutcome===‘Interested’).length}
 
 // ========== Tabs ==========
-function setTab(t,btn){document.querySelectorAll('.tab-bar button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));document.getElementById('tab-'+t).classList.add('active')}
+function setTab(t,btn){document.querySelectorAll(’.tab-bar button’).forEach(b=>b.classList.remove(‘active’));btn.classList.add(‘active’);document.querySelectorAll(’.tab-content’).forEach(c=>c.classList.remove(‘active’));document.getElementById(‘tab-’+t).classList.add(‘active’)}
 
 // ========== Email ==========
 function buildEmails(l){
-  const b=l.business||'[Business]',t=l.town||'your area',dm=l.dm||'',firstName=user.name.split(' ')[0]||'';
-  const greet=dm?`Hi ${dm},`:'Hi,';
-  return [
-    {id:'vm',title:'📱 Voicemail / No Answer',subj:`Quick intro - gym equipment for ${b}`,body:`${greet}\n\nI tried calling earlier but couldn't get through. I'm ${firstName} from AresFit - we supply commercial gym equipment from Nautilus, Star Trac, StairMaster, Schwinn and Jordan Fitness, available on finance through our partner (business customers subject to status).\n\nIf you've got anything coming up equipment-wise - replacements, additions or a refurb - happy to confirm current lead times and delivery for your site.\n\nBest regards,`},
-    {id:'cold',title:'❄️ Cold Intro',subj:`Gym equipment options for ${b}`,body:`${greet}\n\nI came across ${b}${t!=='your area'?` in ${t}`:''} and wanted to reach out. I'm ${firstName} from AresFit - we supply Nautilus, Star Trac, StairMaster, Schwinn and Jordan Fitness to commercial gyms across the UK.\n\nFinance is available for business customers subject to status (AresFit acts as an introducer, finance provided by our partner). If you share any SKUs or requirements plus a delivery postcode, I can come back with a proper quote and confirmed lead time.\n\nBest regards,`},
-    {id:'chase',title:'📅 Callback Chase',subj:`Following up - ${b}`,body:`${greet}\n\nJust following up on our conversation - wanted to check if you'd had a chance to think things over. Happy to put together a proper quote with confirmed spec and lead time if it would help, even just for future reference.\n\nBest regards,`},
-    {id:'quote',title:'💷 Quote Follow-Up',subj:`Your quote - ${b}`,body:`${greet}\n\nJust checking in on the quote I sent over. Let me know if you've got any questions or if you'd like me to adjust anything. Finance is available for business customers subject to status through our partner if that helps with budgeting.\n\nBest regards,`}
-  ];
+const b=l.business||’[Business]’,t=l.town||‘your area’,dm=l.dm||’’,firstName=user.name.split(’ ‘)[0]||’’;
+const greet=dm?`Hi ${dm},`:‘Hi,’;
+return [
+{id:‘vm’,title:‘📱 Voicemail / No Answer’,subj:`Quick intro - gym equipment for ${b}`,body:`${greet}\n\nI tried calling earlier but couldn't get through. I'm ${firstName} from AresFit - we supply commercial gym equipment from Nautilus, Star Trac, StairMaster, Schwinn and Jordan Fitness, available on finance through our partner (business customers subject to status).\n\nIf you've got anything coming up equipment-wise - replacements, additions or a refurb - happy to confirm current lead times and delivery for your site.\n\nBest regards,`},
+{id:‘cold’,title:‘❄️ Cold Intro’,subj:`Gym equipment options for ${b}`,body:`${greet}\n\nI came across ${b}${t!=='your area'?` in ${t}`:''} and wanted to reach out. I'm ${firstName} from AresFit - we supply Nautilus, Star Trac, StairMaster, Schwinn and Jordan Fitness to commercial gyms across the UK.\n\nFinance is available for business customers subject to status (AresFit acts as an introducer, finance provided by our partner). If you share any SKUs or requirements plus a delivery postcode, I can come back with a proper quote and confirmed lead time.\n\nBest regards,`},
+{id:‘chase’,title:‘📅 Callback Chase’,subj:`Following up - ${b}`,body:`${greet}\n\nJust following up on our conversation - wanted to check if you'd had a chance to think things over. Happy to put together a proper quote with confirmed spec and lead time if it would help, even just for future reference.\n\nBest regards,`},
+{id:‘quote’,title:‘💷 Quote Follow-Up’,subj:`Your quote - ${b}`,body:`${greet}\n\nJust checking in on the quote I sent over. Let me know if you've got any questions or if you'd like me to adjust anything. Finance is available for business customers subject to status through our partner if that helps with budgeting.\n\nBest regards,`}
+];
 }
 function renderEmail(){
-  const l=filtered[idx];if(!l){document.getElementById('tab-email').innerHTML='<p class="sub">Select a lead</p>';return}
-  if(!l.email){document.getElementById('tab-email').innerHTML='<div class="email-tpl"><p class="sub">No email address. Tap the email field on the card to add one.</p></div>';return}
-  const emails=buildEmails(l);
-  document.getElementById('tab-email').innerHTML=emails.map(e=>`<div class="email-tpl"><h3>${e.title}</h3><div class="subj">Subject: ${esc(e.subj)}</div><div class="body">${esc(e.body)}</div><button class="gmail-btn" onclick="openGmailWith('${e.id}')">📧 Open in Gmail</button></div>`).join('');
+const l=filtered[idx];if(!l){document.getElementById(‘tab-email’).innerHTML=’<p class="sub">Select a lead</p>’;return}
+if(!l.email){document.getElementById(‘tab-email’).innerHTML=’<div class="email-tpl"><p class="sub">No email address. Tap the email field on the card to add one.</p></div>’;return}
+const emails=buildEmails(l);
+document.getElementById(‘tab-email’).innerHTML=emails.map(e=>`<div class="email-tpl"><h3>${e.title}</h3><div class="subj">Subject: ${esc(e.subj)}</div><div class="body">${esc(e.body)}</div><button class="gmail-btn" onclick="openGmailWith('${e.id}')">📧 Open in Gmail</button></div>`).join(’’);
 }
-function openGmail(){const l=filtered[idx];if(!l||!l.email)return;const o=l.callOutcome;let id='cold';if(o==='Voicemail')id='vm';else if(o==='Callback')id='chase';else if(o==='Interested')id='quote';openGmailWith(id)}
-function openGmailWith(id){const l=filtered[idx];if(!l||!l.email)return;const e=buildEmails(l).find(x=>x.id===id);if(!e)return;const url=`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(l.email)}&su=${encodeURIComponent(e.subj)}&body=${encodeURIComponent(e.body)}`;window.open(url,'_blank')}
+function openGmail(){const l=filtered[idx];if(!l||!l.email)return;const o=l.callOutcome;let id=‘cold’;if(o===‘Voicemail’)id=‘vm’;else if(o===‘Callback’)id=‘chase’;else if(o===‘Interested’)id=‘quote’;openGmailWith(id)}
+function openGmailWith(id){const l=filtered[idx];if(!l||!l.email)return;const e=buildEmails(l).find(x=>x.id===id);if(!e)return;const url=`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(l.email)}&su=${encodeURIComponent(e.subj)}&body=${encodeURIComponent(e.body)}`;window.open(url,’_blank’)}
 
 // ========== Script ==========
 function renderScript(){
-  const l=filtered[idx]||{};
-  const b=esc(l.business||'[Business]'),t=esc(l.town||'your area'),dm=esc(l.dm||''),firstName=user.name.split(' ')[0]||'';
-  document.getElementById('tab-script').innerHTML=`
+const l=filtered[idx]||{};
+const b=esc(l.business||’[Business]’),t=esc(l.town||‘your area’),dm=esc(l.dm||’’),firstName=user.name.split(’ ‘)[0]||’’;
+document.getElementById(‘tab-script’).innerHTML=`
+
   <div class="script-branch"><h3>🛡️ Gatekeeper</h3><p>Hi, it's ${firstName} from AresFit - could you put me through to whoever handles equipment purchasing at ${b}? I'm calling about commercial gym kit that a few places in ${t} have taken up recently.</p></div>
   <div class="script-branch"><h3>🎯 Decision Maker</h3><p>Hi${dm?' '+dm:''}, ${firstName} from AresFit. Quick one - we supply Nautilus, Star Trac, StairMaster, Schwinn and Jordan Fitness to commercial gyms, with finance available for business customers subject to status.\n\nReason for the call - I noticed ${b}${t!=='your area'?' in '+t:''} and wanted to see if you've got any kit coming up for replacement or any gaps on the floor this year - cardio, strength, functional, anything?\n\n[LISTEN]\n\nBased on what you've said, I can put together a proper quote once I've confirmed lead times and delivery for your postcode. Worth me emailing that over?</p></div>
   <div class="script-branch"><h3>📱 Voicemail</h3><p>Hi, this is ${firstName} from AresFit. We supply commercial gym equipment with finance available for business customers. Calling for ${b}. I'll try you again, or drop me an email at ${esc(user.email)}. Cheers.</p></div>
@@ -797,7 +813,8 @@ function renderScript(){
 
 // ========== Safety / Ref ==========
 function renderRef(){
-  document.getElementById('tab-ref').innerHTML=`
+document.getElementById(‘tab-ref’).innerHTML=`
+
   <div class="safety">
     <h3>⚠ Never Say / Never Guess</h3>
     <ul>
@@ -832,9 +849,10 @@ function copyText(t){navigator.clipboard.writeText(t).then(()=>{flashDot(true)})
 
 // ========== Keypad ==========
 function renderKeypad(){
-  const dials=JSON.parse(localStorage.getItem('aresfit_manual_dials')||'[]');
-  const todayDials=dials.filter(d=>isToday(d.ts));
-  document.getElementById('tab-keypad').innerHTML=`
+const dials=JSON.parse(localStorage.getItem(‘aresfit_manual_dials’)||’[]’);
+const todayDials=dials.filter(d=>isToday(d.ts));
+document.getElementById(‘tab-keypad’).innerHTML=`
+
   <h2>📞 Keypad</h2>
   <p class="sub" style="margin-bottom:8px;font-size:11px">Type any number → logs here + opens CircleLoop</p>
   <div class="keypad-display" id="kp-display">${keypadNum||'—'}</div>
@@ -859,21 +877,22 @@ function kpLogDial(){
   window._lastKpDial=now;
   // Just copy the number and open CircleLoop. Don't touch any lead records.
   navigator.clipboard.writeText(keypadNum).then(()=>{flashDot(true)});
-  setTimeout(()=>{window.location.href='https://apps.apple.com/gb/app/circleloop/id1120683212'},100);
+  setTimeout(()=>{window.location.href='circleloop://call/'+keypadNum},100);
 }
 function kpLogDialOLD(){}
 function kpRedial(num){keypadNum=num;renderKeypad();window.open('tel:'+num,'_self')}
 
 // ========== Tools tab ==========
 function renderSite(){
-  const l=filtered[idx]||{};
-  const bq=encodeURIComponent((l.business||'')+(l.town?' '+l.town:''));
-  const bName=esc(l.business||'');
-  const googleURL=l.business?`https://www.google.com/search?q=${bq}`:'https://www.google.com';
-  const chURL=l.business?`https://find-and-update.company-information.service.gov.uk/search/companies?q=${bq}`:'https://find-and-update.company-information.service.gov.uk/';
-  const fbURL=l.business?`https://www.facebook.com/search/top?q=${bq}`:'https://www.facebook.com';
-  const mapsURL=l.business?`https://www.google.com/maps/search/${bq}`:'https://maps.google.com';
-  document.getElementById('tab-site').innerHTML=`
+const l=filtered[idx]||{};
+const bq=encodeURIComponent((l.business||’’)+(l.town?’ ‘+l.town:’’));
+const bName=esc(l.business||’’);
+const googleURL=l.business?`https://www.google.com/search?q=${bq}`:‘https://www.google.com’;
+const chURL=l.business?`https://find-and-update.company-information.service.gov.uk/search/companies?q=${bq}`:‘https://find-and-update.company-information.service.gov.uk/’;
+const fbURL=l.business?`https://www.facebook.com/search/top?q=${bq}`:‘https://www.facebook.com’;
+const mapsURL=l.business?`https://www.google.com/maps/search/${bq}`:‘https://maps.google.com’;
+document.getElementById(‘tab-site’).innerHTML=`
+
   <h2>🔍 Research ${bName?'· '+bName:''}</h2>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px">
     <a href="${googleURL}" target="_blank" class="btn-ghost" style="padding:10px;text-align:center;text-decoration:none;font-size:12px">🔎 Google</a>
@@ -903,53 +922,54 @@ function renderSite(){
 // ========== Export ==========
 function todayTag(){const d=new Date();return `[${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}`}
 function leadCalledToday(l){
-  if(l.callStart&&isToday(l.callStart))return true;
-  const tag=todayTag();
-  if(l.callStartDisplay&&l.callStartDisplay.startsWith(tag))return true;
-  if(l.callNotes&&l.callNotes.includes(tag))return true;
-  return false;
+if(l.callStart&&isToday(l.callStart))return true;
+const tag=todayTag();
+if(l.callStartDisplay&&l.callStartDisplay.startsWith(tag))return true;
+if(l.callNotes&&l.callNotes.includes(tag))return true;
+return false;
 }
 function exportCSV(mode,fname,silent){
-  let rows,defaultName;
-  const dateStr=new Date().toISOString().slice(0,10);
-  if(mode==='today'){rows=leads.filter(leadCalledToday);defaultName=`aresfit-today-${dateStr}.csv`}
-  else if(mode===true){rows=leads.filter(l=>l.callOutcome==='Callback');defaultName=`aresfit-callbacks-${dateStr}.csv`}
-  else{rows=leads;defaultName=`aresfit-all-${dateStr}.csv`}
-  if(!rows.length){if(!silent)alert('Nothing to export for "'+mode+'"\n\nLeads counted today: '+leads.filter(leadCalledToday).length);return}
-  let name=fname;
-  if(!name&&!silent){
-    name=prompt(`Save ${rows.length} leads as:`,defaultName);
-    if(!name)return;
-    if(!name.endsWith('.csv'))name+='.csv';
-  }
-  if(!name)name=defaultName;
-  const cols=[...headers,'Call Outcome','Called At','Call Count','Call Notes','Callback Date'];
-  const escC=v=>{v=String(v||'');return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
-  const fmt=iso=>{if(!iso)return '';const d=new Date(iso);return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`};
-  const csv=[cols.join(','),...rows.map(l=>{
-    let r;
-    if(l.rawIdx>=0&&raw[l.rawIdx]){r={...raw[l.rawIdx]};Object.keys(l.edited||{}).forEach(f=>{if(mapping[f])r[mapping[f]]=l[f]})}
-    else{
-      // Manually-created lead (keypad dial) - build row from lead fields directly
-      r={};
-      headers.forEach(h=>{
-        const field=COL_MAP[h];
-        if(field&&l[field]!==undefined)r[h]=l[field];
-        else r[h]='';
-      });
-      // If no matching columns, at least put business name and phone somewhere visible
-      if(!Object.values(r).some(v=>v)){r[headers[0]||'Business']=l.business;if(headers[1])r[headers[1]]=l.phone}
-    }
-    return [...headers.map(h=>escC(r[h])),escC(l.callOutcome),escC(fmt(l.callStart)||l.callStartDisplay||''),escC(l.callCount||''),escC(l.callNotes),escC(l.cbDate)].join(',');
-  })].join('\n');
-  const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();
+let rows,defaultName;
+const dateStr=new Date().toISOString().slice(0,10);
+if(mode===‘today’){rows=leads.filter(leadCalledToday);defaultName=`aresfit-today-${dateStr}.csv`}
+else if(mode===true){rows=leads.filter(l=>l.callOutcome===‘Callback’);defaultName=`aresfit-callbacks-${dateStr}.csv`}
+else{rows=leads;defaultName=`aresfit-all-${dateStr}.csv`}
+if(!rows.length){if(!silent)alert(‘Nothing to export for “’+mode+’”\n\nLeads counted today: ‘+leads.filter(leadCalledToday).length);return}
+let name=fname;
+if(!name&&!silent){
+name=prompt(`Save ${rows.length} leads as:`,defaultName);
+if(!name)return;
+if(!name.endsWith(’.csv’))name+=’.csv’;
 }
-function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+if(!name)name=defaultName;
+const cols=[…headers,‘Call Outcome’,‘Called At’,‘Call Count’,‘Call Notes’,‘Callback Date’];
+const escC=v=>{v=String(v||’’);return /[”,\n]/.test(v)?’”’+v.replace(/”/g,’””’)+’”’:v};
+const fmt=iso=>{if(!iso)return ‘’;const d=new Date(iso);return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`};
+const csv=[cols.join(’,’),…rows.map(l=>{
+let r;
+if(l.rawIdx>=0&&raw[l.rawIdx]){r={…raw[l.rawIdx]};Object.keys(l.edited||{}).forEach(f=>{if(mapping[f])r[mapping[f]]=l[f]})}
+else{
+// Manually-created lead (keypad dial) - build row from lead fields directly
+r={};
+headers.forEach(h=>{
+const field=COL_MAP[h];
+if(field&&l[field]!==undefined)r[h]=l[field];
+else r[h]=’’;
+});
+// If no matching columns, at least put business name and phone somewhere visible
+if(!Object.values(r).some(v=>v)){r[headers[0]||‘Business’]=l.business;if(headers[1])r[headers[1]]=l.phone}
+}
+return […headers.map(h=>escC(r[h])),escC(l.callOutcome),escC(fmt(l.callStart)||l.callStartDisplay||’’),escC(l.callCount||’’),escC(l.callNotes),escC(l.cbDate)].join(’,’);
+})].join(’\n’);
+const blob=new Blob([’\ufeff’+csv],{type:‘text/csv;charset=utf-8’});const a=document.createElement(‘a’);a.href=URL.createObjectURL(blob);a.download=name;a.click();
+}
+function esc(s){return String(s||’’).replace(/[&<>”’]/g,c=>({’&’:’&’,’<’:’<’,’>’:’>’,’”’:’"’,”’”:’'’}[c]))}
 
 // Re-render when returning from CircleLoop / other apps
-document.addEventListener('visibilitychange',()=>{if(!document.hidden&&leads.length)render()});
-window.addEventListener('focus',()=>{if(leads.length)render()});
-window.addEventListener('pageshow',()=>{if(leads.length)render()});
+document.addEventListener(‘visibilitychange’,()=>{if(!document.hidden&&leads.length)render()});
+window.addEventListener(‘focus’,()=>{if(leads.length)render()});
+window.addEventListener(‘pageshow’,()=>{if(leads.length)render()});
 </script>
+
 </body>
 </html>
